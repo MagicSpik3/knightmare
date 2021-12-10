@@ -18,7 +18,7 @@ public class Collidable : MonoBehaviour
     {
         // Collision work
         boxCollider.OverlapCollider(filter, hits);
-        Debug.Log("hits and hits.length" + hits + hits.Length);
+        //Debug.Log("hits and hits.length" + hits + hits.Length);
         for (int i = 0; i < hits.Length; i++)
         {
             if (hits[i] == null)
@@ -35,6 +35,6 @@ public class Collidable : MonoBehaviour
 
     protected virtual void OnCollide(Collider2D coll)
     {
-        Debug.Log("OnCollide was not implemented in " + this.name);
+        //Debug.Log("OnCollide was not implemented in " + this.name);
     }
 }

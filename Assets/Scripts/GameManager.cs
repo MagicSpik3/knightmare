@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        Debug.Log("Game manager is awake");
+        //Debug.Log("Game manager is awake");
         if (GameManager.instance != null)
         {
-            Debug.Log("I am going to destroy things");
+            //Debug.Log("I am going to destroy things");
             Destroy(gameObject);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Yor level is" + GetCurrentLevel());
+        //Debug.Log("Yor level is" + GetCurrentLevel());
     }
 
     // Hitpoint bar
@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
     // Death menu and respawn
     public void Respawn()
     {
+        Debug.Log("You should respawn now");
         deathMenuAnim.SetTrigger("Hide");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
     }
@@ -149,7 +150,7 @@ public class GameManager : MonoBehaviour
         s += weapon.weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
-        Debug.Log("SaveState" + s);
+        //Debug.Log("SaveState" + s);
     }
 
     public void LoadState(Scene s, LoadSceneMode mode)
@@ -166,7 +167,7 @@ public class GameManager : MonoBehaviour
 
         // Experience
         experience = int.Parse(data[2]);
-        Debug.Log("loading XP from previous save" + experience);
+        //Debug.Log("loading XP from previous save" + experience);
         if(GetCurrentLevel() != 1)
             player.SetLevel(GetCurrentLevel());
 
